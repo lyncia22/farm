@@ -28,10 +28,10 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="absolute top-3 inset-x-0 z-50">
+    <header className="absolute top-5 inset-x-0 z-50">
       <div className="w-full px-0 h-10 flex items-center justify-between text-white">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Farm logo" className="h-8 w-20 object-contain ml-3" />
+          <img src="/logo.png" alt="Farm logo" className="h-8 w-20 object-contain ml-6" />
         </div>
         
         <nav className="hidden md:flex items-center gap-6 text-sm ml-4 mr-auto">
@@ -80,29 +80,37 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* Call + Search placed inline with nav links */}
+          <div className="hidden lg:flex items-center gap-2 ml-36">
+            <FiPhoneCall className="text-amber-300" size={22} aria-hidden />
+            <div className="leading-tight">
+              <div className="text-[11px] text-green-100">Call us Now</div>
+              <div className="text-sm font-semibold text-white">+1(212)255-511</div>
+            </div>
+          </div>
+          <button className="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-green-900 shadow-lg shadow-black/10">
+            <FiSearch size={16} aria-hidden />
+            <span className="sr-only">Search</span>
+          </button>
         </nav>
 
         <div className="flex items-center justify-end">
-          {/* Right controls: call + search, placed just before the fixed Get In Touch box */}
-          <div className="hidden md:flex items-center gap-35 mr-35">
-            <div className="hidden lg:flex items-center gap-3 pl-4 ml-2 border-l border-white/20">
-              <FiPhoneCall className="text-amber-300" size={22} aria-hidden />
-              <div className="leading-tight">
-                <div className="text-[11px] text-green-100">Call us Now</div>
-                <div className="text-sm font-semibold text-white">+1(212)255-511</div>
-              </div>
-            </div>
-            <button className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-green-900 shadow-lg shadow-black/10">
-              <FiSearch size={18} aria-hidden />
-              <span className="sr-only">Search</span>
-            </button>
-          </div>
-          
-          <div className="hidden sm:flex items-center justify-center absolute right-0 -top-1 z-50 bg-[#F6F7EE] w-[200px] h-[90px] rounded-tl-[-90px] rounded-tr-[-90px] rounded-br-[-90px] rounded-bl-[40px]">
+          <div className="hidden sm:flex items-center justify-center absolute right-[3px] -top-6 z-50 bg-[#F6F7EE] w-[160px] h-[110px] rounded-bl-[40px]">
             <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-amber-300 text-green-900 font-semibold px-5 py-2.5 hover:bg-amber-200 pointer-events-auto">
               Get In Touch
             </a>
           </div>
+          {/* Image below the top-right box */}
+          <img
+            src="/SVG.png"
+            className="hidden sm:block absolute right-0 top-[85px] z-40 w-[40px] h-[40px]"
+          />
+          <img
+            src="/SVG.png"
+            alt="Decorative"
+            className="hidden sm:block absolute right-[155px] -top-3 z-40 w-[40px] h-[40px]"
+          />
         </div>
       </div>
     </header>

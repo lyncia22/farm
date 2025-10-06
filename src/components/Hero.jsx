@@ -13,7 +13,7 @@ export default function Hero({
   ctaLabel = 'contact us',
 }) {
   return (
-    <section className="relative overflow-hidden text-white m-2.5 rounded-b-[40px]">
+    <section className="relative overflow-hidden text-white m-2.5 rounded-b-[40px] rounded-tl-[40px]">
       <style>{`
         @keyframes bgZoom { from { transform: scale(1); } to { transform: scale(1.06); } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -26,7 +26,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 md:py-36">
-        <div className="max-w-2xl" style={{ fontFamily: "'Signika', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" }}>
+        <div className="max-w-2xl ml-15" style={{ fontFamily: "'Signika', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" }}>
           {badge && (
             <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold text-white border border-white/80 bg-white/10 backdrop-blur-[1px]" style={{ animation: 'fadeUp 700ms ease-out 60ms both' }}>{badge}</span>
           )}
