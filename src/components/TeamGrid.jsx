@@ -17,20 +17,25 @@ export default function TeamGrid() {
     <section className="bg-[#F6F7EE] py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {members.map((m) => (
-            <article key={m.name} className="rounded-[18px] bg-white shadow-sm overflow-hidden">
-              <div className="relative h-60 w-full">
-                <img src={m.img} alt={m.name} className="h-full w-full object-cover" />
-                <div className="absolute right-3 bottom-3 h-9 w-9 rounded-full bg-amber-300 text-green-900 grid place-items-center shadow">
-                  <FiShare2 size={16} />
-                </div>
-              </div>
-              <div className="p-4 text-green-900">
-                <div className="text-[11px] uppercase tracking-wide text-neutral-500">• {m.role}</div>
-                <div className="mt-1 font-semibold">{m.name}</div>
-              </div>
-            </article>
-          ))}
+          {members.map((m) => {
+            const href = m.name === 'Clara Henry' ? '/team/clara' : '/team';
+            return (
+              <a key={m.name} href={href} className="block rounded-[18px] bg-white shadow-sm overflow-hidden focus:outline-none focus:ring-2 focus:ring-amber-300">
+                <article>
+                  <div className="relative h-60 w-full">
+                    <img src={m.img} alt={m.name} className="h-full w-full object-cover" />
+                    <div className="absolute right-3 bottom-3 h-9 w-9 rounded-full bg-amber-300 text-green-900 grid place-items-center shadow">
+                      <FiShare2 size={16} />
+                    </div>
+                  </div>
+                  <div className="p-4 text-green-900">
+                    <div className="text-[11px] uppercase tracking-wide text-neutral-500">• {m.role}</div>
+                    <div className="mt-1 font-semibold">{m.name}</div>
+                  </div>
+                </article>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>

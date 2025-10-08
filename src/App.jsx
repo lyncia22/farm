@@ -7,11 +7,17 @@ import Faq from './pages/Faq'
 import Services from './pages/Services'
 import BlogPage from './pages/BlogPage'
 import Contact from './pages/Contact'
+import Portfolio from './pages/Portfolio'
+import HarvestConcepts from './pages/HarvestConcepts'
+import ClaraHenry from './pages/ClaraHenry'
 
 export default function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname.toLowerCase() : '/'
   if (path.includes('contact')) return <Contact />
   if (path.includes('blog')) return <BlogPage />
+  if (path.includes('portfolio')) return <Portfolio />
+  if (path.includes('harvest')) return <HarvestConcepts />
+  if (path.includes('clara')) return <ClaraHenry />
   if (path.includes('services')) return <Services />
   if (path.includes('faq')) return <Faq />
   if (path.includes('team')) return <Team />

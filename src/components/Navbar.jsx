@@ -65,6 +65,7 @@ export default function Navbar() {
               <a href="/history" className="block px-4 py-2 hover:bg-amber-50" onClick={() => setIsOpen(false)}>Our History</a>
               <a href="/team" className="block px-4 py-2 hover:bg-amber-50" onClick={() => setIsOpen(false)}>Team Member</a>
               <a href="/faq" className="block px-4 py-2 hover:bg-amber-50" onClick={() => setIsOpen(false)}>FAQ</a>
+              <a href="/portfolio" className="block px-4 py-2 hover:bg-amber-50" onClick={() => setIsOpen(false)}>Portfolio</a>
               
             </div>
           </div>

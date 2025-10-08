@@ -15,8 +15,18 @@ export default function KeywordMarquee() {
           .marquee-track { animation: marquee 28s linear infinite; }
           .stroke-text {
             color: transparent;
-            -webkit-text-stroke-width: 1.2px;
-            -webkit-text-stroke-color: rgba(255,255,255,0.85);
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #000000;
+            /* Fallback outline for browsers without text-stroke */
+            text-shadow:
+              1px 0 0 #000,
+              -1px 0 0 #000,
+              0 1px 0 #000,
+              0 -1px 0 #000,
+              1px 1px 0 #000,
+              -1px 1px 0 #000,
+              1px -1px 0 #000,
+              -1px -1px 0 #000;
           }
         `}</style>
         <div className="bg-[#4E7D4F] py-4">
@@ -27,7 +37,7 @@ export default function KeywordMarquee() {
                 <div key={copy} className="flex items-center gap-10">
                   {words.map((w, i) => (
                     <React.Fragment key={`${copy}-${w}-${i}`}>
-                      <FiStar className="text-amber-300 text-2xl" aria-hidden />
+                      <FiStar className="text-green-300 text-2xl" aria-hidden />
                       <span className="stroke-text text-4xl md:text-5xl font-extrabold tracking-tight">{w}</span>
                     </React.Fragment>
                   ))}
